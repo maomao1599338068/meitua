@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+    <link rel="stylesheet" href="./css/swiper-3.3.1.min.css">
+</head>
+<body>
+    <div class="wrap">
+        <header class='header'>
+            <span>
+                <select name="" id="">
+                    <option value="北京">北京</option>
+                </select>
+            </span>
+            <span>
+                <input type="text" placeholder="输入商家/品类/商圈">
+            </span>
+            <a href='./login.html'>登录</a>
+        </header>
+        <div class="content">
+            <div class='inner-content' up='下拉刷新' down='上拉加载'>
+               
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                       
+                    </div>
+                </div>
+                <div class="list">
+                    <p>猜你喜欢</p>
+                    <ul class="list_type">
+
+                    </ul>
+                </div>
+                <!-- 渲染详情列表 -->
+                <script type='text/x-handlebars-template' id='lists'>
+                    {{#each this}}<li>
+                        <a href='./detail.html?id={{this.id}}'>
+                            <dl class='shop'>
+                                <dt>
+                                    <img src="{{this.img}}">
+                                </dt>
+                                <dd>
+                                    <h4>{{this.addres}}</h4>
+                                </dd>
+                            </dl>
+                        </a>
+                    </li>{{/each}}
+                </script>
+            </div>
+        </div>
+    </div>
+    <script src='./js/libs/require.js'></script>
+    <script>
+        require(['./js/main'],function(){
+            require(['index'])
+        })
+    </script>
+    <!-- 渲染icon图标列表 -->
+    <script type='text/x-handlebars-template' id='list'>
+        {{#each this}}
+        <div class="swiper-slide">
+           <ul class="nav_type">
+                {{#each this.list }}
+               <li>
+                    <i class="icon iconfont {{this.icon}}"></i>
+                    <p>{{this.name}}</p>
+               </li>
+               {{/each}}
+           </ul>
+        </div>
+        {{/each}}
+    </script>
+</body>
+</html>

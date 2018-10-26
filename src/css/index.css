@@ -1,0 +1,90 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+  * a {
+    color: black;
+    text-decoration: none; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+.wrap {
+  width: 100%;
+  height: 100%;
+  background: #ccc; }
+  .wrap .header {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    background: #fff; }
+  .wrap .content {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    overflow: hidden;
+    background: #fff;
+    margin-top: 10px; }
+    .wrap .content .inner-content {
+      width: 100%;
+      position: relative; }
+      .wrap .content .inner-content:before {
+        content: attr(up);
+        width: 100%;
+        height: 40px;
+        display: block;
+        background: pink;
+        position: absolute;
+        top: -40px;
+        left: 0;
+        text-align: center;
+        line-height: 40px; }
+      .wrap .content .inner-content:after {
+        content: attr(down);
+        width: 100%;
+        height: 40px;
+        display: block;
+        background: pink;
+        position: absolute;
+        bottom: -40px;
+        left: 0;
+        text-align: center;
+        line-height: 40px; }
+    .wrap .content .swiper-container {
+      width: 100%; }
+    .wrap .content .swiper-slide {
+      width: 100%; }
+      .wrap .content .swiper-slide .nav_type {
+        display: flex;
+        flex-wrap: wrap; }
+      .wrap .content .swiper-slide .nav_type li {
+        width: 20%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px; }
+        .wrap .content .swiper-slide .nav_type li i {
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          margin: 0 auto;
+          text-align: center;
+          border-radius: 50%;
+          background: lime; }
+        .wrap .content .swiper-slide .nav_type li p {
+          width: 100%;
+          text-align: center; }
+    .wrap .content .list dl {
+      display: flex; }
+      .wrap .content .list dl dt {
+        width: 20%; }
+        .wrap .content .list dl dt img {
+          width: 100%;
+          height: 100%; }
+      .wrap .content .list dl dd {
+        width: 80%; }
+        .wrap .content .list dl dd h3 {
+          height: 40px;
+          line-height: 40px; }
